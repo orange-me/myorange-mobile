@@ -26,6 +26,8 @@ module.exports = {
           '@utils': './src/utils',
           '@redux': './src/redux',
           '@constants': './src/constants',
+          '@helpers': './src/helpers',
+          '@references': './src/references',
         },
       },
     ],
