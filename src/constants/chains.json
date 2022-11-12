@@ -1,0 +1,86 @@
+[
+    {
+        "name": "Ethereum Mainnet",
+        "short_name": "eth",
+        "chain": "ETH",
+        "network": "mainnet",
+        "chain_id": 1,
+        "network_id": 1
+    },
+    {
+        "name": "Ethereum Ropsten",
+        "short_name": "rop",
+        "chain": "ETH",
+        "network": "ropsten",
+        "chain_id": 3,
+        "network_id": 3,
+        "testnet": true
+    },
+    {
+        "name": "Ethereum Rinkeby",
+        "short_name": "rin",
+        "chain": "ETH",
+        "network": "rinkeby",
+        "chain_id": 4,
+        "network_id": 4,
+        "testnet": true
+    },
+    {
+        "name": "Ethereum Kovan",
+        "short_name": "kov",
+        "chain": "ETH",
+        "network": "kovan",
+        "chain_id": 42,
+        "network_id": 42,
+        "testnet": true
+    },
+    {
+        "name": "Ethereum Görli",
+        "short_name": "goe",
+        "chain": "ETH",
+        "network": "goerli",
+        "chain_id": 5,
+        "network_id": 5,
+        "testnet": true
+    },
+    {
+        "name": "Optimism",
+        "short_name": "omainnet",
+        "chain": "ETH",
+        "network": "optimism",
+        "chain_id": 10,
+        "network_id": 10
+    },
+    {
+        "name": "Polygon (Matic)",
+        "short_name": "poly",
+        "chain": "ETH",
+        "network": "polygon",
+        "chain_id": 137,
+        "network_id": 137
+    },
+    {
+        "name": "Arbitrum One",
+        "short_name": "arb",
+        "chain": "ETH",
+        "network": "arbitrum",
+        "chain_id": 42161,
+        "network_id": 42161
+    },
+    {
+        "name": "BNB Smart Chain",
+        "short_name": "bsc",
+        "chain": "BNB",
+        "network": "binance",
+        "chain_id": 56,
+        "network_id": 56
+    },
+    {
+        "name": "BNB Testnet",
+        "short_name": "bnb_test",
+        "chain": "BNB_Test",
+        "network": "binance testnet",
+        "chain_id": 97,
+        "network_id": 97
+    }
+]

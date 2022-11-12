@@ -1,0 +1,52 @@
+{
+    "ethereum_mainnet": [
+        {
+            "tokens": [
+                {
+                    "chainId": 1,
+                    "asset": "c60_t0xdAC17F958D2ee523a2206206994597C13D831ec7",
+                    "type": "ERC20",
+                    "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+                    "name": "Tether",
+                    "symbol": "USDT",
+                    "decimals": 6,
+                    "logoURI": "https://assets-cdn.trustwallet.com/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png",
+                    "pairs": []
+                },
+                {
+                    "asset": "c60_t0x4Fabb145d64652a948d72533023f6E7A623C7C53",
+                    "type": "ERC20",
+                    "address": "0x4Fabb145d64652a948d72533023f6E7A623C7C53",
+                    "name": "Binance USD",
+                    "symbol": "BUSD",
+                    "decimals": 18,
+                    "logoURI": "https://assets-cdn.trustwallet.com/blockchains/ethereum/assets/0x4Fabb145d64652a948d72533023f6E7A623C7C53/logo.png",
+                    "pairs": []
+                },
+                {
+                    "chainId": 1,
+                    "asset": "c60_t0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                    "type": "ERC20",
+                    "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                    "name": "USD Coin",
+                    "symbol": "USDC",
+                    "decimals": 6,
+                    "logoURI": "https://assets-cdn.trustwallet.com/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+                    "pairs": []
+                },
+                {
+                    "chainId": 1,
+                    "asset": "c60_t0x6B175474E89094C44Da98b954EedeAC495271d0F",
+                    "type": "ERC20",
+                    "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+                    "name": "Dai",
+                    "symbol": "DAI",
+                    "decimals": 18,
+                    "logoURI": "https://assets-cdn.trustwallet.com/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+                    "pairs": []
+                },
+                {}
+            ]
+        }
+    ]
+}
