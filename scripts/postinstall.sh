@@ -27,70 +27,70 @@ then
   yarn global add ${GLOBAL_NPM_MISSING[@]}
 fi
 
-# Set up the environment.
-if [ -e .env ]; then
-  source .env
+# # Set up the environment.
+# if [ -e .env ]; then
+#   source .env
 
-  function rewrite_xcode_configs {
-    VALUE=$( cat .env | { grep "$1" || true; } )
-    if [ -n "$VALUE" ]; then
-      echo "$VALUE" | sed 's/=/ = /g' >> ./ios/debug.xcconfig
-      echo "$VALUE" | sed 's/=/ = /g' >> ./ios/release.xcconfig
-      echo "$VALUE" | sed 's/=/ = /g' >> ./ios/localrelease.xcconfig
-      echo "$VALUE" | sed 's/=/ = /g' >> ./ios/staging.xcconfig
-    else
-      echo "$1 not found in .env";
-      exit 1;
-    fi
-  }
+#   function rewrite_xcode_configs {
+#     VALUE=$( cat .env | { grep "$1" || true; } )
+#     if [ -n "$VALUE" ]; then
+#       echo "$VALUE" | sed 's/=/ = /g' >> ./ios/debug.xcconfig
+#       echo "$VALUE" | sed 's/=/ = /g' >> ./ios/release.xcconfig
+#       echo "$VALUE" | sed 's/=/ = /g' >> ./ios/localrelease.xcconfig
+#       echo "$VALUE" | sed 's/=/ = /g' >> ./ios/staging.xcconfig
+#     else
+#       echo "$1 not found in .env";
+#       exit 1;
+#     fi
+#   }
 
-  # For MacOS, copy xconfig files.
-  if [ $PLATFORM == "Darwin" ]; then
+#   # For MacOS, copy xconfig files.
+#   if [ $PLATFORM == "Darwin" ]; then
 
-    rewrite_xcode_configs "BRANCH"
-    rewrite_xcode_configs "GOOGLE"
-    rewrite_xcode_configs "CODE_PUSH_DEPLOYMENT_KEY_IOS"
+#     rewrite_xcode_configs "BRANCH"
+#     rewrite_xcode_configs "GOOGLE"
+#     rewrite_xcode_configs "CODE_PUSH_DEPLOYMENT_KEY_IOS"
 
-    # Override Google Services API Key
-    if [ -n "$GOOGLE_SERVICE_API_KEY" ]; then
-      sed -i''-e "s/\$(GOOGLE_SERVICE_API_KEY)/$GOOGLE_SERVICE_API_KEY/" ./ios/Frameworks/GoogleService-Info.plist
-      rm -rf 'ios/Frameworks/GoogleService-Info.plist-e'
-    else
-      echo "GOOGLE_SERVICE_API_KEY env variable is required";
-      exit 1;
-    fi
+#     # Override Google Services API Key
+#     if [ -n "$GOOGLE_SERVICE_API_KEY" ]; then
+#       sed -i''-e "s/\$(GOOGLE_SERVICE_API_KEY)/$GOOGLE_SERVICE_API_KEY/" ./ios/Frameworks/GoogleService-Info.plist
+#       rm -rf 'ios/Frameworks/GoogleService-Info.plist-e'
+#     else
+#       echo "GOOGLE_SERVICE_API_KEY env variable is required";
+#       exit 1;
+#     fi
 
-    echo "✅ .xcconfig files created"
-  fi
+#     echo "✅ .xcconfig files created"
+#   fi
 
-  # Export Android env vars for all platforms.
-  echo "✅ Android ENV vars exported"
+#   # Export Android env vars for all platforms.
+#   echo "✅ Android ENV vars exported"
 
-else
-  echo "⚠️ .env file missing!! ⚠️"
-  echo "Please make sure the file exists and it's located in the root of the project"
-fi
-
-# if [ -n "$RAINBOW_SCRIPTS_APP_IOS_PREBUILD_HOOK" ]; then
-#   eval $RAINBOW_SCRIPTS_APP_IOS_PREBUILD_HOOK;
-#   echo "✅ executed ios prebuild hook"
+# else
+#   echo "⚠️ .env file missing!! ⚠️"
+#   echo "Please make sure the file exists and it's located in the root of the project"
 # fi
 
-# if [ -n "$RAINBOW_SCRIPTS_APP_ANDROID_PREBUILD_HOOK" ]; then
-#   eval $RAINBOW_SCRIPTS_APP_ANDROID_PREBUILD_HOOK;
-#   echo "✅ executed android prebuild hook"
-# fi
+# # if [ -n "$RAINBOW_SCRIPTS_APP_IOS_PREBUILD_HOOK" ]; then
+# #   eval $RAINBOW_SCRIPTS_APP_IOS_PREBUILD_HOOK;
+# #   echo "✅ executed ios prebuild hook"
+# # fi
 
-# Ignore any potential tracked changes to mutable development files.
-git update-index --assume-unchanged "ios/Frameworks/GoogleService-Info.plist"
-git update-index --assume-unchanged "ios/Internals/ios/Internals.h"
-git update-index --assume-unchanged "ios/Internals/ios/Internals.m"
-git update-index --assume-unchanged "ios/Internals/ios/Internals.swift"
-git update-index --assume-unchanged "ios/Internals/ios/Internals-Bridging-Header.h"
-git update-index --assume-unchanged "ios/Extras.json"
-git update-index --assume-unchanged "android/app/src/main/res/raw/extras.json"
-git update-index --assume-unchanged "android/app/src/main/java/me/rainbow/NativeModules/Internals/InternalModule.java"
-git update-index --assume-unchanged "android/app/src/main/java/me/rainbow/MainActivity.java"
+# # if [ -n "$RAINBOW_SCRIPTS_APP_ANDROID_PREBUILD_HOOK" ]; then
+# #   eval $RAINBOW_SCRIPTS_APP_ANDROID_PREBUILD_HOOK;
+# #   echo "✅ executed android prebuild hook"
+# # fi
+
+# # Ignore any potential tracked changes to mutable development files.
+# git update-index --assume-unchanged "ios/Frameworks/GoogleService-Info.plist"
+# git update-index --assume-unchanged "ios/Internals/ios/Internals.h"
+# git update-index --assume-unchanged "ios/Internals/ios/Internals.m"
+# git update-index --assume-unchanged "ios/Internals/ios/Internals.swift"
+# git update-index --assume-unchanged "ios/Internals/ios/Internals-Bridging-Header.h"
+# git update-index --assume-unchanged "ios/Extras.json"
+# git update-index --assume-unchanged "android/app/src/main/res/raw/extras.json"
+# git update-index --assume-unchanged "android/app/src/main/java/me/rainbow/NativeModules/Internals/InternalModule.java"
+# git update-index --assume-unchanged "android/app/src/main/java/me/rainbow/MainActivity.java"
 
 
 # Specifying ONLY the node packages that we need to install via browserify
@@ -105,12 +105,12 @@ echo "✅ rn-nodeify packages hacked succesfully"
 patch-package
 echo "✅ All patches applied"
 
-# Create a debug file from the default if one does not exist.
-DEBUGFILE=src/config/debug.ts
+# # Create a debug file from the default if one does not exist.
+# DEBUGFILE=src/config/debug.ts
 
-if test -f "$DEBUGFILE"; then
-    echo "$DEBUGFILE exists."
-else
-    echo "$DEBUGFILE does not exist. You use default debug settings."
-    cp src/config/defaultDebug.ts $DEBUGFILE
-fi
+# if test -f "$DEBUGFILE"; then
+#     echo "$DEBUGFILE exists."
+# else
+#     echo "$DEBUGFILE does not exist. You use default debug settings."
+#     cp src/config/defaultDebug.ts $DEBUGFILE
+# fi
