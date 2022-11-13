@@ -71,13 +71,13 @@ fi
 #   echo "Please make sure the file exists and it's located in the root of the project"
 # fi
 
-# # if [ -n "$RAINBOW_SCRIPTS_APP_IOS_PREBUILD_HOOK" ]; then
-# #   eval $RAINBOW_SCRIPTS_APP_IOS_PREBUILD_HOOK;
+# # if [ -n "$ORANGE_SCRIPTS_APP_IOS_PREBUILD_HOOK" ]; then
+# #   eval $ORANGE_SCRIPTS_APP_IOS_PREBUILD_HOOK;
 # #   echo "✅ executed ios prebuild hook"
 # # fi
 
-# # if [ -n "$RAINBOW_SCRIPTS_APP_ANDROID_PREBUILD_HOOK" ]; then
-# #   eval $RAINBOW_SCRIPTS_APP_ANDROID_PREBUILD_HOOK;
+# # if [ -n "$ORANGE_SCRIPTS_APP_ANDROID_PREBUILD_HOOK" ]; then
+# #   eval $ORANGE_SCRIPTS_APP_ANDROID_PREBUILD_HOOK;
 # #   echo "✅ executed android prebuild hook"
 # # fi
 
@@ -89,8 +89,8 @@ fi
 # git update-index --assume-unchanged "ios/Internals/ios/Internals-Bridging-Header.h"
 # git update-index --assume-unchanged "ios/Extras.json"
 # git update-index --assume-unchanged "android/app/src/main/res/raw/extras.json"
-# git update-index --assume-unchanged "android/app/src/main/java/me/rainbow/NativeModules/Internals/InternalModule.java"
-# git update-index --assume-unchanged "android/app/src/main/java/me/rainbow/MainActivity.java"
+# git update-index --assume-unchanged "android/app/src/main/java/myorange/NativeModules/Internals/InternalModule.java"
+# git update-index --assume-unchanged "android/app/src/main/java/myorange/MainActivity.java"
 
 
 # Specifying ONLY the node packages that we need to install via browserify

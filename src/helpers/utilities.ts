@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js';
 import currency from 'currency.js';
 import {get, isNil} from 'lodash';
-import {supportedNativeCurrencies} from '@orange/references/index';
+import {supportedNativeCurrencies} from '@references/index';
 
 type BigNumberish = number | string | BigNumber;
 
