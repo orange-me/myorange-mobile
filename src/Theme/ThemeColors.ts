@@ -1,30 +1,27 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const darkModeColors = {};
-
-const lightModeColors = {
+const colors = {
   primary_1: {
-    orangeLight: '#F5F5FF',
-    orangeLight100: '#E1E1FE',
-    orangeLight200: '#C3C4FE',
-    orangeLight300: '#9B9DFD',
-    orangeLight400: '#7375FD',
-    orangeDark500: '#4B4EFC',
-    orangeDark600: '#1E22FB',
-    orangeDark700: '#0408E7',
-    orangeDark800: '#0306BA',
-    orangeDark900: '##02058D',
+    orangeLight: '#FFF0EB',
+    orangeLight100: '#FFE2D8',
+    orangeLight200: '#FFC5B1',
+    orangeLight300: '#FFA789',
+    orangeLight400: '#FF8A62',
+    orangeDark500: '#FF6D3B',
+    orangeDark600: '#CC572F',
+    orangeDark700: '#994123',
+    orangeDark800: '#662C18',
+    orangeDark900: '#33160C',
   },
   primary_2: {
-    greyLight: '#F9FAFB',
-    greyLight100: '#F3F4F6',
-    greyLight200: '#E5E7EB',
-    greyLight300: '#D1D5DB',
-    greyLight400: '#9CA3AF',
-    greyDark500: '#6B7280',
-    greyDark600: '#4B5563',
-    greyDark700: '#374151',
-    greyDark800: '##1F2937',
-    greyDark900: '#111827',
+    greyLight: '#FFFFFF',
+    greyLight100: '#E6E6E6',
+    greyLight200: '#CCCCCC',
+    greyLight300: '#B3B3B3',
+    greyLight400: '#999999',
+    greyDark500: '#808080',
+    greyDark600: '#666666',
+    greyDark700: '#4D4D4D',
+    greyDark800: '#333333',
+    greyDark900: '#1A1A1A',
   },
   // good for backgrounds, etc
   neutral: {
@@ -78,6 +75,5 @@ const lightModeColors = {
 };
 
 export default {
-  lightModeColors,
-  darkModeColors,
+  colors,
 };
