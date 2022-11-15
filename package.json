@@ -69,6 +69,8 @@
     "punycode": "^1.2.4",
     "qrcode": "^1.5.0",
     "querystring-es3": "~0.2.0",
+    "ramda": "^0.27.1",
+    "ramda-fantasy": "^0.8.0",
     "react": "17.0.2",
     "react-native": "0.68.2",
     "react-native-actionsheet": "beefe/react-native-actionsheet#107/head",

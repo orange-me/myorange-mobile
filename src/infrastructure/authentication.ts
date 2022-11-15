@@ -31,6 +31,3 @@ export async function savePIN(pin: any) {
     captureException(e);
   }
 }
-export async function authenticateWithPINAndCreateIfNeeded() {}
-
-export async function authenticateWithPIN() {}
