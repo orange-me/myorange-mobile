@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-undef */
 // -- Constants --------------------------------------- //
 
 // -- Wallet/Auth ------------------------------ //

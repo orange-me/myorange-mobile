@@ -1,4 +1,4 @@
-import {NetworkTypes} from './NetworkTypes';
+import {NetworkTypes} from '@libs/NetworkTypes';
 
 const networkInfo = {
   [`${NetworkTypes.ethereum_mainnet}`]: {

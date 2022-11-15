@@ -1,3 +1,8 @@
+export enum CurrencyTypes {
+  usd = 'usd',
+  ngn = 'ngn',
+  kes = 'kes',
+}
 export enum NetworkTypes {
   arbitrum = 'arbitrum',
   goerli = 'goerli',
