@@ -4,7 +4,6 @@ import {useTheme} from '@theme/ThemeContext';
 
 const Home = () => {
   const {colors} = useTheme();
-  console.log(colors.primary_1.orangeLight);
   return (
     <View
       style={{
@@ -15,8 +14,7 @@ const Home = () => {
       }}>
       <Text
         style={{
-          fontWight: 700,
-          fontStyle: 'normal',
+          fontWeight: 'bold',
           fontFamily: 'Roobert-Bold',
         }}>
         Hello from home
