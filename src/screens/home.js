@@ -17,7 +17,6 @@ const Home = () => {
         style={{
           fontWight: 700,
           fontStyle: 'normal',
-          fontSize: 30,
           fontFamily: 'Roobert-Bold',
         }}>
         Hello from home
