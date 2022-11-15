@@ -8,9 +8,14 @@
 
 import React from 'react';
 import AppNavigator from '@navigation/AppNavigator';
+import {MainThemeProvider} from '@theme/ThemeContext';
 
 const App = () => {
-  return <AppNavigator />;
+  return (
+    <MainThemeProvider>
+      <AppNavigator />
+    </MainThemeProvider>
+  );
 };
 
 export default App;

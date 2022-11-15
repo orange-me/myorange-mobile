@@ -28,6 +28,7 @@ module.exports = {
           '@constants': './src/constants',
           '@helpers': './src/helpers',
           '@references': './src/references',
+          '@theme': './src/theme',
         },
       },
     ],
