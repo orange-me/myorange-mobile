@@ -1,10 +1,3 @@
-import chroma from 'chroma-js';
-import {toLower} from 'lodash';
-import PropTypes from 'prop-types';
-import currentColors from './currentColors';
-
-export type Colors = ReturnType<typeof getColorsByTheme>;
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const darkModeColors = {};
 
@@ -84,4 +77,7 @@ const lightModeColors = {
   },
 };
 
-const getColorsByTheme = (darkMode?: boolean) => {};
+export default {
+  lightModeColors,
+  darkModeColors,
+};
