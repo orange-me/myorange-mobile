@@ -12,8 +12,12 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2747D62F0B8342C9B4C4137B /* Roobert-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 184F3B1089424F87911C3200 /* Roobert-Light.ttf */; };
+		4B5E0105B8534F0292E6BFAB /* Roobert-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D867A5CEA9304291A8B4FACC /* Roobert-Medium.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-myorange-myorangeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-myorange-myorangeTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		DEB59CEFBAE24F2186269CD6 /* Roobert-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC1D7559193F439392CC44C5 /* Roobert-Regular.ttf */; };
+		EC14984DC7004A4EABBFC9B3 /* Roobert-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A94E2D04D754F6082F76335 /* Roobert-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = myorange/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = myorange/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = myorange/main.m; sourceTree = "<group>"; };
+		184F3B1089424F87911C3200 /* Roobert-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roobert-Light.ttf"; path = "../src/assets/fonts/Roobert-Light.ttf"; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-myorange-myorangeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myorange-myorangeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-myorange.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myorange.debug.xcconfig"; path = "Target Support Files/Pods-myorange/Pods-myorange.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-myorange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myorange.release.xcconfig"; path = "Target Support Files/Pods-myorange/Pods-myorange.release.xcconfig"; sourceTree = "<group>"; };
@@ -43,6 +48,9 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-myorange.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myorange.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = myorange/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-myorange-myorangeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myorange-myorangeTests.release.xcconfig"; path = "Target Support Files/Pods-myorange-myorangeTests/Pods-myorange-myorangeTests.release.xcconfig"; sourceTree = "<group>"; };
+		9A94E2D04D754F6082F76335 /* Roobert-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roobert-Bold.ttf"; path = "../src/assets/fonts/Roobert-Bold.ttf"; sourceTree = "<group>"; };
+		CC1D7559193F439392CC44C5 /* Roobert-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roobert-Regular.ttf"; path = "../src/assets/fonts/Roobert-Regular.ttf"; sourceTree = "<group>"; };
+		D867A5CEA9304291A8B4FACC /* Roobert-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roobert-Medium.ttf"; path = "../src/assets/fonts/Roobert-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -81,6 +89,17 @@
 				00E356F11AD99517003FC87E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		054E675DD7274E29B5214CD8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9A94E2D04D754F6082F76335 /* Roobert-Bold.ttf */,
+				184F3B1089424F87911C3200 /* Roobert-Light.ttf */,
+				D867A5CEA9304291A8B4FACC /* Roobert-Medium.ttf */,
+				CC1D7559193F439392CC44C5 /* Roobert-Regular.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		13B07FAE1A68108700A75B9A /* myorange */ = {
@@ -122,6 +141,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				054E675DD7274E29B5214CD8 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -244,6 +264,10 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				EC14984DC7004A4EABBFC9B3 /* Roobert-Bold.ttf in Resources */,
+				2747D62F0B8342C9B4C4137B /* Roobert-Light.ttf in Resources */,
+				4B5E0105B8534F0292E6BFAB /* Roobert-Medium.ttf in Resources */,
+				DEB59CEFBAE24F2186269CD6 /* Roobert-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,15 @@ const Home = () => {
         alignItems: 'center',
         backgroundColor: colors.primary_1.orangeLight400,
       }}>
-      <Text>Hello from home</Text>
+      <Text
+        style={{
+          fontWight: 700,
+          fontStyle: 'normal',
+          fontSize: 30,
+          fontFamily: 'Roobert-Bold',
+        }}>
+        Hello from home
+      </Text>
     </View>
   );
 };
