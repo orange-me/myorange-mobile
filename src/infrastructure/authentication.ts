@@ -1,7 +1,7 @@
 import {captureException} from '@sentry/react-native';
 import {ORANGE_MASTER_KEY} from 'react-native-dotenv';
 import AesEncryptor from '@helpers/encryption';
-import {pinKey} from '@constants/keyChainConstants';
+import {pinKey} from '@libs/constants.ts';
 import * as keychain from '../infrastructure/keychain';
 import logger from '@helpers/loggers';
 

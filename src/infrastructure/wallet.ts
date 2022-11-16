@@ -12,7 +12,7 @@
  *
  */
 import multichainWallet from 'multichain-crypto-wallet';
-import {NetworkTypes, OrangeAccount, OrangeWallet} from '@libs/NetworkTypes';
+import {NetworkTypes, OrangeAccount, OrangeWallet} from '@libs/constants';
 import {savePin, getExistingPIN} from './authentication';
 import AesEncryptor from '@rainbow-me/handlers/aesEncryption';
 
@@ -32,15 +32,45 @@ export const createWallet = async (
   //check if wallet is imported
   const isImported = !!seed;
 
-  let addressees: OrangeAccount[] = [];
+  let addresses: OrangeAccount[] = [];
   let wallet: OrangeWallet = {};
   try {
     // store address on the addresseses array
     // create wallets on different chains and update the wallet object
-    // save encrypted private key on keychain -- encrypt with pin
-    // save encrypted seed on keychain -- encrypt with pin
+    // save encrypted private key on keychain -- encrypt with  pin
+    // save encrypted seed on keychain -- encrypt with  pin
     // save wallet object on keychain
     //
-    // const {} await multichainWallet.createWallet({})
+
+    // this wallet supports all evm compatible blockchain
+    /**
+     * This can be better improved
+     */
+    const ethereumWallet = await multichainWallet.createWallet({
+      network: NetworkTypes.ethereum,
+    });
+    addresses.push({
+      index: 0,
+      network: NetworkTypes.ethereum,
+      address: ethereumWallet.address,
+    });
+    // solana wallet
+    const solanaWallet = await multichainWallet.createWallet({
+      network: NetworkTypes.solana,
+    });
+    addresses.push({
+      index: 0,
+      network: NetworkTypes.solana,
+      address: solanaWallet.address,
+    });
+    // bitcoin wallet
+    const bitcoinWallet = await multichainWallet.createWallet({
+      network: NetworkTypes.bitcoin,
+    });
+    addresses.push({
+      index: 0,
+      network: NetworkTypes.bitcoin,
+      address: bitcoinWallet.address,
+    });
   } catch {}
 };
