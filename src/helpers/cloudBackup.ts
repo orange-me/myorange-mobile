@@ -209,7 +209,6 @@ export async function backupUserDataIntoCloud(data: any) {
 export async function fetchUserDataFromCloud() {
   const filename = USERDATA_FILE;
   const password = ORANGE_MASTER_KEY;
-  // @ts-expect-error ts-migrate(2345) FIXME: Argument of type '"UserData.json"' is not assignab... Remove this comment to see the full error message
   return getDataFromCloud(password, filename);
 }
 
