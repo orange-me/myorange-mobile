@@ -18,6 +18,9 @@ import AesEncryptor from '@rainbow-me/handlers/aesEncryption';
 
 const encryptor = new AesEncryptor();
 
+export const allWalletsVersion = 1.0;
+export const DEFAULT_WALLET_NAME = 'My Wallet';
+
 export const generateMnemonic = async () => {
   const seed = await multichainWallet.generateMnemonic();
   return seed;

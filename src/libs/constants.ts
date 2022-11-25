@@ -40,8 +40,16 @@ export interface OrangeAccount {
   network: NetworkTypes;
   address: string;
 }
+export enum WalletBackupTypes {
+  cloud = 'cloud',
+  manual = 'manual',
+}
+export default {
+  cloud: 'cloud',
+  manual: 'manual',
+} as const;
 
-export interface RainbowWallet {
+export interface OrangeWallet {
   addresses: OrangeAccount[];
   id: string;
   imported: boolean;
@@ -53,12 +61,13 @@ export interface RainbowWallet {
   backupDate?: string;
   backupType?: string;
 }
-
+export interface AllOrangeWallets {
+  [key: string]: OrangeWallet;
+}
 // key chain constants
 export const seedPhraseKey = 'orangeSeedPhrase';
 export const privateKeyKey = 'orangePrivateKey';
 export const addressKey = 'orangeAddressKey';
 export const selectedWalletKey = 'orangeSelectedWalletKey';
 export const allWalletsKey = 'orangeAllWalletsKey';
-export const oldSeedPhraseMigratedKey = 'orangeOldSeedPhraseMigratedKey';
 export const pinKey = 'orangePinKey';
