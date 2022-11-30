@@ -27,7 +27,7 @@ export const COLORS = {
   neutral: {
     smokeLight: 'rgba(249, 250, 251, 1)',
     smokeLight100: 'rgba(243, 244, 246, 1)',
-    smokeLight200: 'rgba(229, 231, 235, 1)',
+    smokeLight200: '#E5E7EB',
     smokeLight300: 'rgba(209, 213, 219, 1)',
     smokeLight400: 'rgba(156, 163, 175, 1)',
     smokeDark500: 'rgba(107, 114, 128, 1)',
@@ -36,6 +36,7 @@ export const COLORS = {
     smokeDark800: 'rgba(31, 41, 55, 1)',
     smokeDark900: 'rgba(17, 24, 39, 1)',
     white: 'rgb(255,255,255)',
+    black: 'rgb(0,0,0)',
   },
   warning: {
     yellowLight: '#FFFBEB',

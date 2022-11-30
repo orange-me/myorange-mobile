@@ -14,7 +14,8 @@
     "install-pods": "cd ios && bundle exec pod install --repo-update && cd ..",
     "install-pods-fast": "cd ios && bundle exec pod install && cd ..",
     "start:clean": "watchman watch-del-all && rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/metro-* && rm -rf $TMPDIR/haste-map-* && react-native start -- --reset-cache",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "convert-svg": "npx @svgr/cli --icon --native --typescript --ignore-existing --memo --out-dir ./src/components/Icons -- ./src/assets/icons"
   },
   "dependencies": {
     "@ensdomains/address-encoder": "0.2.16",
@@ -38,6 +39,7 @@
     "@ethersproject/units": "5.6.1",
     "@ethersproject/wallet": "5.6.2",
     "@metamask/eth-sig-util": "^4.0.1",
+    "@react-native-community/blur": "^4.3.0",
     "@react-native-community/clipboard": "^1.5.1",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/core": "^6.2.1",
@@ -121,6 +123,7 @@
     "@nomiclabs/hardhat-ethers": "2.0.4",
     "@nomiclabs/hardhat-waffle": "2.0.1",
     "@react-native-community/eslint-config": "2.0.0",
+    "@svgr/cli": "^6.5.1",
     "@types/jest": "^28.1.1",
     "@types/react": "^18.0.12",
     "@types/react-native": "^0.67.8",

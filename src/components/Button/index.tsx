@@ -16,17 +16,25 @@ const DEFAULT_STATIC_PROPS = {
 };
 
 type WithIconProps = TouchableOpacityProps & {
-  Icon?: () => JSX.Element;
-  text: JSX.Element | string;
+  Icon?: JSX.Element;
   loading?: boolean;
   LoadIndicator?: ReactElement<any, 'ActivityIndicator'>;
+  small?: boolean;
+  text?: JSX.Element | string;
   fontSize?: number;
   textColor?: string;
-  small?: boolean;
-};
+} & (
+    | {
+        iconOnly?: false;
+      }
+    | {
+        iconOnly: true;
+        size: number;
+      }
+  );
 
 type ButtonProps = {
-  text: string;
+  text?: string;
   outline?: boolean;
   fullwidth?: boolean;
   disabled?: boolean;
@@ -50,17 +58,20 @@ const WithIcon = ({
       <Flex style={{flexShrink: 0}}>
         {loading ? LoadIndicator : Icon || null}
       </Flex>
-      <ButtonText
-        small={props.small}
-        style={{
-          fontSize: props.fontSize,
-          textAlign: 'center',
-          opacity: 1,
-          marginLeft: Icon || loading ? 5 : 0,
-          color: props.textColor,
-        }}>
-        {text}
-      </ButtonText>
+
+      {props?.iconOnly ? null : (
+        <ButtonText
+          small={props.small}
+          style={{
+            fontSize: props.fontSize,
+            textAlign: 'center',
+            opacity: 1,
+            marginLeft: Icon || loading ? 5 : 0,
+            color: props.textColor,
+          }}>
+          {text}
+        </ButtonText>
+      )}
     </Flex.Row>
   );
 };
@@ -74,6 +85,10 @@ const buildStructure = (
       <Button
         onPress={onPress}
         {...props}
+        style={[
+          props.style,
+          props.iconOnly ? {width: props.size, height: props.size} : undefined,
+        ]}
         disabled={props.loading ? true : props.disabled}
         accessibilityState={{disabled: props?.disabled ?? false}}>
         <WithIcon
@@ -97,6 +112,7 @@ const buildStructure = (
               ? staticProps.textOutlineColor
               : staticProps.textColor
           }
+          {...props}
         />
       </Button>
     );
@@ -117,12 +133,7 @@ const BaseButton = styled(TouchableOpacity).attrs({
     `,
   )}
 
-  ${withProp(
-    'small',
-    css`
-      padding: 12px 15px;
-    `,
-  )}
+  ${withProp('small', css``)}
 
   ${fullwidth};
 `;
@@ -149,19 +160,32 @@ export const Primary = buildStructure(
 
 export const Secondary = buildStructure(
   styled(BaseButton)`
-    background-color: ${COLORS.neutral.white};
+    background-color: ${COLORS.neutral.black};
 
     ${withProp(
       'disabled',
       css`
-        background-color: ${COLORS.neutral.white} !important;
+        background-color: ${COLORS.neutral.black} !important;
       `,
     )}
   `,
   {
-    textColor: COLORS.primary_1.Light400,
-    indicatorColor: COLORS.primary_1.Light400,
+    textColor: COLORS.neutral.white,
+    indicatorColor: COLORS.neutral.white,
     textOutlineColor: COLORS.primary_1.Light400,
+    textDisabledColor: COLORS.neutral.smokeLight200,
+  },
+);
+
+export const Outline = buildStructure(
+  styled(BaseButton)`
+    background-color: transparent;
+    border: solid 1px ${COLORS.primary_2.greyLight100};
+  `,
+  {
+    textColor: COLORS.neutral.smokeDark900,
+    indicatorColor: COLORS.error.redLight400,
+    textOutlineColor: COLORS.error.redLight400,
     textDisabledColor: COLORS.neutral.smokeLight200,
   },
 );

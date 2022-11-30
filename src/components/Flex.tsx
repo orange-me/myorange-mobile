@@ -1,25 +1,35 @@
-// import React from 'react';
+import React from 'react';
 // @ts-ignore
 import styled, {css} from 'styled-components/native';
 import {fullwidth, propOr, withProp} from './styled_helpers';
-import {Animated} from 'react-native';
+import {Animated, ViewStyle} from 'react-native';
 
-interface FlexProps {
-  pt: number;
-  pl: number;
-  pr: number;
-  pb: number;
-  py: number;
-  px: number;
-  mx: number;
-  my: number;
-  shrink: 1 | 0;
-  flex: 1 | 0;
-  outline: boolean;
-  alignSelf: 'flex-start' | 'center' | 'flex-end';
-}
+export type FlexProps = ViewStyle &
+  Partial<{
+    pt: number;
+    pl: number;
+    pr: number;
+    pb: number;
+    py: number;
+    px: number;
+    mx: number;
+    my: number;
+    mt: number;
+    mb: number;
+    ml: number;
+    mr: number;
+    shrink: 1 | 0;
+    flex: 1 | 0;
+    fullwidth: boolean;
+    outline: boolean;
+    alignSelf: 'flex-start' | 'center' | 'flex-end';
+  }>;
 
-export const Flex = styled.View<FlexProps>`
+type Flex = React.FC<React.PropsWithChildren<FlexProps>> & {
+  Row: React.FC<React.PropsWithChildren<FlexProps>>;
+};
+
+export const Flex: Flex = styled.View`
   align-items: ${propOr('alignItems', 'flex-start')};
   justify-content: ${propOr('justifyContent', 'flex-start')};
 

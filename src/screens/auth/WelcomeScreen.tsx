@@ -7,6 +7,7 @@ import {COLORS} from '@theme/ThemeColors';
 import * as Button from '@components/Button';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {NavigationScreenProp} from 'react-navigation';
+import {RootRoutes} from '@navigation/routes';
 
 const WelcomeScreen = ({
   navigation,
@@ -45,13 +46,13 @@ const WelcomeScreen = ({
           disabled={false}
           rounded
           style={{minWidth: 250}}
-          onPress={() => navigation.navigate('ConnectWallet')}
+          onPress={() => navigation.navigate(RootRoutes.BackupWallet)}
         />
 
         <Button.Ghost
           text={'Restore your wallet'}
           style={{minWidth: 250}}
-          onPress={() => navigation.navigate('RestoreWallet')}
+          onPress={() => navigation.navigate(RootRoutes.RestoreWallet)}
         />
       </Flex>
     </SafeAreaView>
