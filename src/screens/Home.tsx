@@ -1,4 +1,4 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
 import {useTheme} from '@theme/ThemeContext';
 import {Lead} from '@components/Typography';
@@ -8,10 +8,10 @@ const Home = () => {
   return (
     <View
       style={{
-        justifyContent: 'center',
         flex: 1,
         alignItems: 'center',
-        backgroundColor: colors.primary_1.orangeDark600,
+        justifyContent: 'center',
+        backgroundColor: colors.primary_1.Dark500,
       }}>
       <Lead style={{color: colors.primary_2.greyLight}}>
         Your Keys, your coins

@@ -1,15 +1,15 @@
-const colors = {
+export const COLORS = {
   primary_1: {
-    orangeLight: '#FFF0EB',
-    orangeLight100: '#FFE2D8',
-    orangeLight200: '#FFC5B1',
-    orangeLight300: '#FFA789',
-    orangeLight400: '#FF8A62',
-    orangeDark500: '#FF6D3B',
-    orangeDark600: '#CC572F',
-    orangeDark700: '#994123',
-    orangeDark800: '#662C18',
-    orangeDark900: '#33160C',
+    Light: '#FFF0EB',
+    Light100: '#FFE2D8',
+    Light200: '#FFC5B1',
+    Light300: '#FFA789',
+    Light400: '#FF8A62',
+    Dark500: '#FF6D3B',
+    Dark600: '#CC572F',
+    Dark700: '#994123',
+    Dark800: '#662C18',
+    Dark900: '#33160C',
   },
   primary_2: {
     greyLight: '#FFFFFF',
@@ -35,6 +35,7 @@ const colors = {
     smokeDark700: 'rgba(55, 65, 81, 1)',
     smokeDark800: 'rgba(31, 41, 55, 1)',
     smokeDark900: 'rgba(17, 24, 39, 1)',
+    white: 'rgb(255,255,255)',
   },
   warning: {
     yellowLight: '#FFFBEB',
@@ -75,5 +76,5 @@ const colors = {
 };
 
 export default {
-  colors,
+  colors: COLORS,
 };
