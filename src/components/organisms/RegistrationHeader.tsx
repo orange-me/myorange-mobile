@@ -12,7 +12,9 @@ export const RegistrationHeader: React.FC<{
 }> = ({headingText, description, pageNumber}) => {
   return (
     <>
-      <OnboardingProgress active={pageNumber} />
+      <Flex py={12}>
+        <OnboardingProgress active={pageNumber} />
+      </Flex>
 
       <Flex mt={Gutter.SMALL}>
         <H2>{headingText}</H2>

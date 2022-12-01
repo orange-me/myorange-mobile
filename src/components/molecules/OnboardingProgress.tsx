@@ -1,26 +1,46 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import {COLORS} from '@theme/ThemeColors';
 import Flex from '@components/Flex';
-import {Gutter} from '@theme/Spacing';
 
-export const OnboardingProgress = ({active = 0}) => {
-  const style = useCallback(
+export const OnboardingProgress: React.FC<{
+  active: number;
+  slideCount?: number;
+  color?: string;
+  slideHeight?: number;
+  gutter?: number;
+}> = ({
+  active = 0,
+  color = COLORS.primary_1.Dark500,
+  slideHeight = 4,
+  slideCount = 4,
+  gutter = 6,
+}) => {
+  const arr = React.useRef(Array.from(Array(slideCount))).current;
+  const style = React.useCallback(
     (index: number) => ({
-      height: 4,
-      backgroundColor:
-        index <= active
-          ? COLORS.primary_1.Dark500
-          : COLORS.neutral.smokeLight200,
+      height: slideHeight,
+      backgroundColor: index <= active ? color : COLORS.neutral.smokeLight200,
     }),
-    [active],
+    [active, color, slideHeight],
   );
 
   return (
-    <Flex.Row py={12} fullwidth>
-      <Flex style={style(0)} flex={1} mr={Gutter.XSMALL} />
-      <Flex style={style(1)} flex={1} mx={Gutter.XSMALL} />
-      <Flex style={style(2)} flex={1} mx={Gutter.XSMALL} />
-      <Flex style={style(3)} flex={1} ml={Gutter.XSMALL} />
+    <Flex.Row fullwidth>
+      {arr.map((e, index) => {
+        if (index === 0)
+          return (
+            <Flex key={index} style={style(index + 1)} flex={1} mr={gutter} />
+          );
+
+        if (index === arr.length - 1)
+          return (
+            <Flex key={index} style={style(index + 1)} flex={1} ml={gutter} />
+          );
+
+        return (
+          <Flex key={index} style={style(index + 1)} flex={1} mx={gutter} />
+        );
+      })}
     </Flex.Row>
   );
 };

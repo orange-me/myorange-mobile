@@ -146,7 +146,7 @@ export const Primary = buildStructure(
     ${withProp(
       'disabled',
       css`
-        background-color: ${COLORS.primary_1.Light200} !important;
+        background-color: ${COLORS.neutral.smokeLight200} !important;
       `,
     )}
   `,

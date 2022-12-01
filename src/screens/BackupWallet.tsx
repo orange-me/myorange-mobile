@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {SafeAreaView, StyleSheet, TouchableOpacity} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import Flex from '@components/Flex';
 import {BaseText} from '@components/Typography';
 import {Gutter} from '@theme/Spacing';
@@ -9,8 +9,9 @@ import {RootRoutes} from '@navigation/routes';
 import {NavigationScreenProp} from 'react-navigation';
 import {RegistrationHeader} from '@components/organisms/RegistrationHeader';
 import {CopyButton} from '@components/molecules/CopyButton';
-import {EyeLight} from '@components/Icons';
+import {EyeHideLight, EyeLight} from '@components/Icons';
 import {BlurView} from '@react-native-community/blur';
+import {AuthLayout} from '@components/templates/AuthLayout';
 
 const staticSecrets = [
   'axis',
@@ -36,11 +37,11 @@ export function BackupWallet({
   const [showSecrets, setShowSecrets] = useState(false);
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: COLORS.neutral.white}}>
-      <Flex justifyContent={'space-between'} mx={Gutter.REGULAR} flex={1}>
-        <Flex alignItems={'stretch'}>
+    <AuthLayout
+      Header={
+        <>
           <RegistrationHeader
-            pageNumber={0}
+            pageNumber={1}
             headingText={'Backup your wallet'}
             description={
               <>
@@ -51,7 +52,6 @@ export function BackupWallet({
               </>
             }
           />
-
           <Flex
             outline
             mt={Gutter.LARGE}
@@ -96,7 +96,11 @@ export function BackupWallet({
 
               <TouchableOpacity onPress={() => setShowSecrets(!showSecrets)}>
                 <Flex.Row alignItems={'center'}>
-                  <EyeLight width={20} height={20} />
+                  {!showSecrets ? (
+                    <EyeLight width={20} height={20} />
+                  ) : (
+                    <EyeHideLight width={20} height={20} />
+                  )}
                   <BaseText style={{fontSize: 14, marginLeft: 4}}>
                     {!showSecrets ? 'Reveal' : 'Hide'}
                   </BaseText>
@@ -104,8 +108,9 @@ export function BackupWallet({
               </TouchableOpacity>
             </Flex.Row>
           </Flex>
-        </Flex>
-
+        </>
+      }
+      Footer={
         <Flex py={Gutter.REGULAR} alignItems={'stretch'} fullwidth>
           <Secondary
             rounded
@@ -119,7 +124,7 @@ export function BackupWallet({
           <Flex my={6} />
           <Outline rounded fullwidth={true} text={'Backup manually'} />
         </Flex>
-      </Flex>
-    </SafeAreaView>
+      }
+    />
   );
 }

@@ -2,9 +2,9 @@ import React from 'react';
 // @ts-ignore
 import styled, {css} from 'styled-components/native';
 import {fullwidth, propOr, withProp} from './styled_helpers';
-import {Animated, ViewStyle} from 'react-native';
+import {Animated, ViewProps} from 'react-native';
 
-export type FlexProps = ViewStyle &
+export type FlexProps = ViewProps &
   Partial<{
     pt: number;
     pl: number;

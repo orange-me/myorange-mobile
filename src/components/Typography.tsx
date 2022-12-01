@@ -1,14 +1,7 @@
 // @ts-ignore
 import styled, {css} from 'styled-components/native';
 import {withProp} from '@components/styled_helpers';
-
-const Fonts = {
-  Primary: {
-    Bold: 'Roobert-Bold',
-    Medium: 'Roobert-Medium',
-    Regular: 'Roobert-Regular',
-  },
-};
+import {Fonts} from '@theme/Font';
 
 export const H1 = styled.Text`
   color: rgba(0, 0, 0, 1);
@@ -64,6 +57,10 @@ export const BaseText = styled.Text`
       font-family: ${Fonts.Primary.Bold};
     `,
   )}
+`;
+
+export const InputMessageText = styled(BaseText)`
+  font-size: 14px;
 `;
 
 export const ButtonText = styled.Text.attrs({

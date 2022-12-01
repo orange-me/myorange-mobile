@@ -6,4 +6,6 @@ export const RootRoutes = {
   Login: 'Login',
   Welcome: 'Welcome',
   CreatePassword: 'CreatePassword',
+  EnterPin: 'EnterPin',
+  NameWallet: 'NameWallet',
 };
