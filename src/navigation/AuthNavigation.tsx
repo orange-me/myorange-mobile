@@ -4,8 +4,6 @@ import Login from '@screens/auth/Login';
 
 const Stack = createStackNavigator();
 
-console.log(Stack, 'stack');
-
 const AuthNavigation = () => {
   return (
     <Stack.Navigator

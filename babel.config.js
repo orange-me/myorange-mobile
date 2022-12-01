@@ -29,6 +29,7 @@ module.exports = {
           '@helpers': './src/helpers',
           '@references': './src/references',
           '@theme': './src/theme',
+          '@infrastructure': './src/infrastructure',
         },
       },
     ],

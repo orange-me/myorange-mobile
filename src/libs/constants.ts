@@ -33,6 +33,8 @@ export default {
   polygon: 'polygon',
   rinkeby: 'rinkeby',
   ropsten: 'ropsten',
+  cloud: 'cloud',
+  manual: 'manual',
 } as const;
 
 export interface OrangeAccount {
@@ -44,11 +46,6 @@ export enum WalletBackupTypes {
   cloud = 'cloud',
   manual = 'manual',
 }
-export default {
-  cloud: 'cloud',
-  manual: 'manual',
-} as const;
-
 export interface OrangeWallet {
   addresses: OrangeAccount[];
   id: string;
@@ -64,7 +61,7 @@ export interface OrangeWallet {
 export interface AllOrangeWallets {
   [key: string]: OrangeWallet;
 }
-// key chain constants
+// keychain constants
 export const seedPhraseKey = 'orangeSeedPhrase';
 export const privateKeyKey = 'orangePrivateKey';
 export const addressKey = 'orangeAddressKey';

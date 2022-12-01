@@ -13,16 +13,19 @@
  */
 import multichainWallet from 'multichain-crypto-wallet';
 import {NetworkTypes, OrangeAccount, OrangeWallet} from '@libs/constants';
-import {savePin, getExistingPIN} from './authentication';
-import AesEncryptor from '@rainbow-me/handlers/aesEncryption';
+import {savePIN, getExistingPIN} from './authentication';
+import AesEncryptor from '@helpers/encryption';
 
 const encryptor = new AesEncryptor();
 
 export const allWalletsVersion = 1.0;
 export const DEFAULT_WALLET_NAME = 'My Wallet';
 
-export const generateMnemonic = async () => {
-  const seed = await multichainWallet.generateMnemonic();
+export const generateMnemonic = () => {
+  // @ts-ignore
+  console.log('gets here');
+  const seed = multichainWallet.generateMnemonic();
+  console.log(seed, 'seed from generating wallet');
   return seed;
 };
 
@@ -36,7 +39,7 @@ export const createWallet = async (
   const isImported = !!seed;
 
   let addresses: OrangeAccount[] = [];
-  let wallet: OrangeWallet = {};
+  let wallet: OrangeWallet;
   try {
     // store address on the addresseses array
     // create wallets on different chains and update the wallet object
@@ -50,20 +53,20 @@ export const createWallet = async (
      * This can be better improved
      */
     const ethereumWallet = await multichainWallet.createWallet({
-      network: NetworkTypes.ethereum,
+      network: NetworkTypes.ethereum_mainnet,
     });
     addresses.push({
       index: 0,
-      network: NetworkTypes.ethereum,
+      network: NetworkTypes.ethereum_mainnet,
       address: ethereumWallet.address,
     });
     // solana wallet
     const solanaWallet = await multichainWallet.createWallet({
-      network: NetworkTypes.solana,
+      network: NetworkTypes.solana_mainnet,
     });
     addresses.push({
       index: 0,
-      network: NetworkTypes.solana,
+      network: NetworkTypes.solana_mainnet,
       address: solanaWallet.address,
     });
     // bitcoin wallet

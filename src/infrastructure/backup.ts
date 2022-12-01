@@ -20,7 +20,7 @@ import {
   OrangeWallet,
 } from '@libs/constants';
 import * as keychain from './keychain';
-import logger from 'logger';
+import logger from '@utils/logger';
 import {createWallet, allWalletsVersion} from './wallet';
 
 /**
@@ -36,12 +36,15 @@ interface BackedUpData {
 }
 
 interface BackupUserData {
-  wallets: OrangeWallet;
+  wallets: AllOrangeWallets;
 }
+type BackupPassword = string;
 
 async function extractSecretsForWallet(wallet: OrangeWallet) {
   const allKeys = await keychain.loadAllKeys();
-  if (!allKeys) throw new Error(CLOUD_BACKUP_ERRORS.KEYCHAIN_ACCESS_ERROR);
+  if (!allKeys) {
+    throw new Error(CLOUD_BACKUP_ERRORS.KEYCHAIN_ACCESS_ERROR);
+  }
   const secrets = {} as {[key: string]: string};
 
   const allowedPkeysKeys = map(
@@ -204,7 +207,7 @@ async function restoreSpecificBackupIntoKeychain(
       if (endsWith(key, seedPhraseKey)) {
         const valueStr = backedUpData[key];
         const {seedphrase} = JSON.parse(valueStr);
-        await createWallet(seedphrase, null, null, true);
+        await createWallet(seedphrase, null, null);
       }
     }
     return true;
