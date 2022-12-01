@@ -1,5 +1,4 @@
-
-import { View, Text, Button, TouchableOpacity } from "react-native";
+import {View} from 'react-native';
 import React from 'react';
 import {useTheme} from '@theme/ThemeContext';
 // import {generateMnemonic} from '@infrastructure/wallet';
@@ -17,10 +16,10 @@ const Home = () => {
   return (
     <View
       style={{
-        justifyContent: 'center',
         flex: 1,
         alignItems: 'center',
-        backgroundColor: colors.primary_1.orangeDark600,
+        justifyContent: 'center',
+        backgroundColor: colors.primary_1.Dark500,
       }}>
       <Lead style={{color: colors.primary_2.greyLight}}>
         Your Keys, your coins
