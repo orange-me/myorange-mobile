@@ -86,14 +86,14 @@ async function extractSecretsForWallet(wallet: OrangeWallet) {
 
 export async function backupWalletToCloud(
   password: BackupPassword,
-  wallet: OrangeWallet,
+  wallet?: OrangeWallet,
 ) {
   const now = Date.now();
 
-  const secrets = await extractSecretsForWallet(wallet);
+  //const secrets = await extractSecretsForWallet(wallet);
   const data = {
     createdAt: now,
-    secrets,
+    secrets: 'njoku',
   };
   return encryptAndSaveDataToCloud(data, password, `backup_${now}.json`);
 }

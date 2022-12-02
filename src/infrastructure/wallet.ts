@@ -11,20 +11,24 @@
  * 9. Implement approveTransaction() function; - Function should approve a transaction
  *
  */
-import multichainWallet from 'multichain-crypto-wallet';
+// there's an issue with the multichainwallet package
+// import multichainWallet from 'multichain-crypto-wallet';
 import {NetworkTypes, OrangeAccount, OrangeWallet} from '@libs/constants';
 import {savePIN, getExistingPIN} from './authentication';
 import AesEncryptor from '@helpers/encryption';
+import {generateMnemonic} from 'bip39';
 
 const encryptor = new AesEncryptor();
 
 export const allWalletsVersion = 1.0;
 export const DEFAULT_WALLET_NAME = 'My Wallet';
 
-export const generateMnemonic = () => {
+export const generateMnemonicWithBip = () => {
   // @ts-ignore
   console.log('gets here');
-  const seed = multichainWallet.generateMnemonic();
+  const seed = generateMnemonic();
+
+  // const seed = multichainWallet.generateMnemonic();
   console.log(seed, 'seed from generating wallet');
   return seed;
 };

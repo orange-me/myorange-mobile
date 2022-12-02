@@ -8,7 +8,6 @@ import * as Button from '@components/Button';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {NavigationScreenProp} from 'react-navigation';
 import {RootRoutes} from '@navigation/routes';
-
 const WelcomeScreen = ({
   navigation,
 }: {

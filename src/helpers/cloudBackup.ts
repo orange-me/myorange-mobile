@@ -1,10 +1,10 @@
 import {sortBy} from 'lodash';
-import {Platform} from 'react-native';
+import { Platform } from 'react-native';
 import RNCloudFs from 'react-native-cloud-fs';
-import {ORANGE_MASTER_KEY} from 'react-native-dotenv';
+import { ORANGE_MASTER_KEY } from 'react-native-dotenv';
 import RNFS from 'react-native-fs';
-import AesEncryptor from '../handlers/aesEncryption';
-import {logger} from '../utils';
+import AesEncryptor from './encryption';
+import { logger } from '../utils';
 
 // @Joe, please advice on this backup wallet directory.
 const REMOTE_BACKUP_WALLET_DIR = '';
@@ -73,14 +73,13 @@ export async function encryptAndSaveDataToCloud(
     );
     // Store it on the FS first
     const path = `${RNFS.DocumentDirectoryPath}/${filename}`;
-    // @ts-expect-error ts-migrate(2345) FIXME: Argument of type 'string | undefined' is not assig... Remove this comment to see the full error message
     await RNFS.writeFile(path, encryptedData, 'utf8');
     const sourceUri = {path};
     const destinationPath = `${REMOTE_BACKUP_WALLET_DIR}/${filename}`;
     const mimeType = 'application/json';
     // Only available to our app
     const scope = 'hidden';
-    if (Platform.OS == 'android') {
+    if (Platform.OS === 'android') {
       await RNCloudFs.loginIfNeeded();
     }
     const result = await RNCloudFs.copyToCloud({
@@ -89,9 +88,10 @@ export async function encryptAndSaveDataToCloud(
       sourcePath: sourceUri,
       targetPath: destinationPath,
     });
+    console.log(result, 'result from data backup');
     // Now we need to verify the file has been stored in the cloud
     const exists = await RNCloudFs.fileExists(
-      Platform.OS == 'ios'
+      Platform.OS === 'ios'
         ? {
             scope,
             targetPath: destinationPath,
@@ -104,9 +104,7 @@ export async function encryptAndSaveDataToCloud(
 
     if (!exists) {
       logger.sentry('Backup doesnt exist after completion');
-      const error = new Error(CLOUD_BACKUP_ERRORS.INTEGRITY_CHECK_FAILED);
-
-      throw error;
+      throw new Error(CLOUD_BACKUP_ERRORS.INTEGRITY_CHECK_FAILED);
     }
 
     await RNFS.unlink(path);
