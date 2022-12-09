@@ -52,7 +52,7 @@ export function NameWallet({navigation}: any) {
             iconOnly={true}
             size={54}
             onPress={() => {
-              navigation.navigate(RootRoutes.EnterPin);
+              navigation.navigate(RootRoutes.Home);
             }}
           />
         </>

@@ -3,6 +3,7 @@ export const RootRoutes = {
   Auth: 'Auth',
   BackupWallet: 'BackupWallet',
   RestoreWallet: 'RestoreWallet',
+  SelectWallet: 'SelectWallet',
   Login: 'Login',
   Welcome: 'Welcome',
   CreatePassword: 'CreatePassword',

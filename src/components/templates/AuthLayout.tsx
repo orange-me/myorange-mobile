@@ -12,7 +12,9 @@ export const AuthLayout: React.FC<{
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.neutral.white}}>
       <KeyboardAvoidingView behavior={'height'} style={{flex: 1}}>
         <Flex justifyContent={'space-between'} mx={Gutter.REGULAR} flex={1}>
-          <Flex alignItems={'stretch'}>{props.Header}</Flex>
+          <Flex alignItems={'stretch'} fullwidth>
+            {props.Header}
+          </Flex>
 
           <Flex.Row
             justifyContent={'space-between'}

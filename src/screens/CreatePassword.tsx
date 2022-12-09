@@ -13,7 +13,6 @@ import {RootRoutes} from '@navigation/routes';
 import {AuthLayout} from '@components/templates/AuthLayout';
 
 export function CreatePassword({navigation}: {navigation: any}) {
-  const [showPassword, setShowPassword] = React.useState(false);
   const [value, setValue] = React.useState('Oops!');
 
   return (
@@ -37,9 +36,7 @@ export function CreatePassword({navigation}: {navigation: any}) {
             <SecureInput
               value={value}
               label={'Enter password'}
-              secureTextEntry={!showPassword}
               onChangeText={text => setValue(text)}
-              toggleSecretEntry={() => setShowPassword(!showPassword)}
             />
 
             <Flex mt={Gutter.SMALL} fullwidth>
@@ -52,9 +49,7 @@ export function CreatePassword({navigation}: {navigation: any}) {
               value={value}
               label={'Confirm Password'}
               hasError={true}
-              secureTextEntry={!showPassword}
               onChangeText={text => setValue(text)}
-              toggleSecretEntry={() => setShowPassword(!showPassword)}
               message={
                 <Flex mt={8}>
                   <InputMessageText>Password does not exist</InputMessageText>

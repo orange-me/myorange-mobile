@@ -8,6 +8,8 @@ import {BackupWallet} from '@screens/BackupWallet';
 import {CreatePassword} from '@screens/CreatePassword';
 import {EnterPin} from '@screens/EnterPin';
 import {NameWallet} from '@screens/NameWallet';
+import {RestoreWallet} from '@screens/RestoreWallet';
+import {SelectWallet} from '@screens/SelectWallet';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,7 +17,7 @@ const AppNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={RootRoutes.Welcome}
+        initialRouteName={RootRoutes.Home}
         screenOptions={{
           headerShown: false,
         }}>
@@ -23,8 +25,9 @@ const AppNavigator = () => {
         <Stack.Screen name={RootRoutes.BackupWallet} component={BackupWallet} />
         <Stack.Screen
           name={RootRoutes.RestoreWallet}
-          component={BackupWallet}
+          component={RestoreWallet}
         />
+        <Stack.Screen name={RootRoutes.SelectWallet} component={SelectWallet} />
         <Stack.Screen
           name={RootRoutes.CreatePassword}
           component={CreatePassword}

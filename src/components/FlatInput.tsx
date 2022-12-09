@@ -185,16 +185,18 @@ export const withMessage: InputHOC<{message: JSX.Element}> = (
   };
 
 type SecureInputProps = {
-  secureTextEntry: boolean;
-  toggleSecretEntry: () => void;
+  secureTextEntry?: boolean;
+  toggleSecretEntry?: () => void;
 };
 
 export const withSecureInput: InputHOC<SecureInputProps> = Component =>
   function SecureWrap(props) {
+    const [secured, setSecured] = React.useState(props.secureTextEntry || true);
+
     return (
       <Flex fullwidth style={{position: 'relative'}}>
         {/*// @ts-ignore*/}
-        <Component {...props} />
+        <Component {...props} secureTextEntry={secured} />
 
         <TouchableOpacity
           style={{
@@ -204,8 +206,10 @@ export const withSecureInput: InputHOC<SecureInputProps> = Component =>
             position: 'absolute',
             right: 0,
           }}
-          onPress={props.toggleSecretEntry}>
-          {props.secureTextEntry ? (
+          onPress={() => {
+            setSecured(!secured);
+          }}>
+          {secured ? (
             <EyeLight width={20} height={20} />
           ) : (
             <EyeHideLight width={20} height={20} />
