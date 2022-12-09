@@ -4,4 +4,4 @@ export const Gutter = {
   REGULAR: 20,
   MEDIUM: 24,
   LARGE: 36,
-};
+} as const;

@@ -45,6 +45,58 @@ const getState = (cond: boolean) => (prop: 'scale' | 'translate') => {
   return 0;
 };
 
+export const Input: React.FC<
+  {icon: JSX.Element} & OrangeInputProps
+> = props => {
+  const input = useInputFocus(props);
+
+  const focusedColor = React.useMemo(
+    () =>
+      input.focused ? COLORS.primary_1.Dark500 : COLORS.primary_2.greyLight100,
+    [input.focused],
+  );
+
+  return (
+    <Flex fullwidth>
+      <Flex
+        justifyContent={'center'}
+        alignItems={'center'}
+        pointerEvents={'none'}
+        style={{
+          minWidth: 50,
+          position: 'absolute',
+          top: 0,
+          bottom: 0,
+          zIndex: 2,
+        }}>
+        {props.icon}
+      </Flex>
+
+      <TextInput
+        {...props}
+        placeholder={'Search crypto'}
+        onBlur={input.onBlur}
+        onFocus={input.onFocus}
+        style={[
+          {
+            paddingLeft: 50,
+            fontSize: 16,
+            backgroundColor: COLORS.neutral.smokeLight,
+            height: 54,
+            borderWidth: 1,
+            width: '100%',
+            borderRadius: 8,
+            paddingHorizontal: 16,
+            paddingVertical: 12,
+            borderColor: focusedColor,
+          },
+          props.style,
+        ]}
+      />
+    </Flex>
+  );
+};
+
 export const FlatInput = React.forwardRef<any, OrangeInputProps>(
   (props, mainRef) => {
     const {focused, onFocus, onBlur} = useInputFocus({

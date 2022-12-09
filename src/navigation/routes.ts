@@ -9,4 +9,10 @@ export const RootRoutes = {
   CreatePassword: 'CreatePassword',
   EnterPin: 'EnterPin',
   NameWallet: 'NameWallet',
-};
+  AddCrypto: 'AddCrypto',
+} as const;
+
+export const ModalRoutes = {
+  SelectNetwork: 'SelectNetwork',
+  TokenReceiveDetails: 'TokenReceiveDetails',
+} as const;

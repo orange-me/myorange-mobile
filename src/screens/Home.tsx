@@ -9,8 +9,9 @@ import {CircleRightAlt, ExpandLeft, Plus, Return} from '@components/Icons';
 import {Eye} from '@components/atoms/Eye';
 import {BlurBox} from '@components/molecules/BlurBox';
 import * as Button from '@components/Button';
+import {RootRoutes} from '@navigation/routes';
 
-const Home = () => {
+const Home = ({navigation}) => {
   const {colors} = useTheme();
   return (
     <SafeAreaView
@@ -43,7 +44,12 @@ const Home = () => {
           </BaseText>
         </Flex>
 
-        <Button.Primary text={'Add crypto'} rounded style={{minWidth: 260}} />
+        <Button.Primary
+          text={'Add crypto'}
+          rounded
+          style={{minWidth: 260}}
+          onPress={() => navigation.navigate(RootRoutes.AddCrypto)}
+        />
       </Flex>
     </SafeAreaView>
   );
