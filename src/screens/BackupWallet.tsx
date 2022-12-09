@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, TouchableOpacity} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import Flex from '@components/Flex';
 import {BaseText} from '@components/Typography';
 import {Gutter} from '@theme/Spacing';
@@ -9,9 +9,9 @@ import {RootRoutes} from '@navigation/routes';
 import {NavigationScreenProp} from 'react-navigation';
 import {RegistrationHeader} from '@components/organisms/RegistrationHeader';
 import {CopyButton} from '@components/molecules/CopyButton';
-import {EyeHideLight, EyeLight} from '@components/Icons';
-import {BlurView} from '@react-native-community/blur';
 import {AuthLayout} from '@components/templates/AuthLayout';
+import {Eye} from '@components/atoms/Eye';
+import {BlurBox} from '@components/molecules/BlurBox';
 
 const staticSecrets = [
   'axis',
@@ -65,42 +65,38 @@ export function BackupWallet({
               backgroundColor: COLORS.neutral.white,
               borderColor: COLORS.neutral.smokeLight200,
             }}>
-            {!showSecrets && (
-              <BlurView
-                blurType="light"
-                blurAmount={12}
-                style={[
-                  StyleSheet.absoluteFillObject,
-                  {zIndex: 2, borderRadius: 12, bottom: 40},
-                ]}
-                reducedTransparencyFallbackColor={COLORS.neutral.white}
-              />
-            )}
-
-            <Flex.Row
-              fullwidth
+            <BlurBox
+              state={!showSecrets}
+              blurAmount={12}
               style={{
-                flexWrap: 'wrap',
+                bottom: -20,
+              }}
+              contentContainerStyle={{
+                marginTop: -Gutter.SMALL,
+                paddingTop: Gutter.SMALL,
+                paddingHorizontal: Gutter.SMALL,
+                marginHorizontal: -Gutter.SMALL,
               }}>
-              {secrets.map(e => (
-                <Flex key={e} px={3} py={4}>
-                  <BaseText style={{color: COLORS.primary_2.greyDark700}}>
-                    {e}
-                  </BaseText>
-                </Flex>
-              ))}
-            </Flex.Row>
+              <Flex.Row
+                style={{
+                  flexWrap: 'wrap',
+                }}>
+                {secrets.map(e => (
+                  <Flex key={e} px={3} py={4}>
+                    <BaseText style={{color: COLORS.primary_2.greyDark700}}>
+                      {e}
+                    </BaseText>
+                  </Flex>
+                ))}
+              </Flex.Row>
+            </BlurBox>
 
             <Flex.Row mt={Gutter.LARGE * 2} justifyContent={'space-between'}>
               <CopyButton onPress={() => {}} />
 
               <TouchableOpacity onPress={() => setShowSecrets(!showSecrets)}>
                 <Flex.Row alignItems={'center'}>
-                  {!showSecrets ? (
-                    <EyeLight width={20} height={20} />
-                  ) : (
-                    <EyeHideLight width={20} height={20} />
-                  )}
+                  <Eye size={20} state={!showSecrets} />
                   <BaseText style={{fontSize: 14, marginLeft: 4}}>
                     {!showSecrets ? 'Reveal' : 'Hide'}
                   </BaseText>
